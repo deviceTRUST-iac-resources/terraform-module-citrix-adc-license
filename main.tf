@@ -3,9 +3,9 @@
 #####
 
 resource "citrixadc_systemfile" "license_upload" {
-    filename     = var.adc-lic-filename
-    filelocation = var.adc-lic-filelocation
-    filecontent  = file(var.adc-lic-filecontent)
+    filename     = var.adc-license.filename
+    filelocation = var.adc-license.filelocation
+    filecontent  = file(var.adc-license.filecontent)
 }
 
 #####
