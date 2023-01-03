@@ -34,3 +34,18 @@ resource "citrixadc_rebooter" "license_reboot" {
         citrixadc_nsconfig_save.license_save
     ]
 }
+
+#####
+# Wait for config save to commence properly, before allowing the subsequent module to run.
+#####
+
+
+resource "time_sleep" "license_wait" {
+
+  create_duration = "5s"
+
+  depends_on = [
+    citrixadc_nsconfig_save.license_save
+  ]
+
+}
