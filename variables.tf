@@ -9,5 +9,5 @@ variable adc-base {
 # Variables for license file upload
 #####
 
-variable adc-license {
+variable adc-base-license {
 }
