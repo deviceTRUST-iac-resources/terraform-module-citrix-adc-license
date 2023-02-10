@@ -28,7 +28,7 @@ resource "citrixadc_nsconfig_save" "license_save" {
     all        = true
     timestamp  = timestamp()
 
-    depends_on           = [
+    depends_on = [
         citrixadc_systemfile.license_upload
     ]
 }
