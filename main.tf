@@ -5,7 +5,7 @@
 resource "citrixadc_systemfile" "license_upload" {
     filename     = var.adc-license.filename
     filelocation = var.adc-license.filelocation
-    filecontent  = file(var.adc-license.filecontent)
+    filecontent  = var.adc-license.filecontent
 }
 
 output "filename" {
