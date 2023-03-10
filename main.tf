@@ -51,7 +51,7 @@ resource "citrixadc_rebooter" "license_reboot" {
 # Wait till machine is available
 #####
 
-resource "time_sleep" "wait_a_few_seconds" {
+resource "time_sleep" "license_wait_a_few_seconds" {
 
   create_duration = "90s"
 
