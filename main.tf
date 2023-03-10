@@ -46,3 +46,17 @@ resource "citrixadc_rebooter" "license_reboot" {
         citrixadc_nsconfig_save.license_save
     ]
 }
+
+#####
+# Wait till machine is available
+#####
+
+resource "time_sleep" "wait_a_few_seconds" {
+
+  create_duration = "90s"
+
+  depends_on = [
+    vsphere_virtual_machine.build_citrix-adc
+  ]
+
+}
