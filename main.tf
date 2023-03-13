@@ -1,9 +1,13 @@
+locals {
+  filelocation = var.adc-license.filelocation
+}
+
 #####
 # Add License
 #####
 resource "citrixadc_systemfile" "license_upload" {
     filename     = var.adc-license.filename
-    filelocation = var.adc-license.filelocation
+    filelocation = local.filelocation
     filecontent  = var.adc-license.filecontent
 }
 
