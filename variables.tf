@@ -1,13 +1,9 @@
 #####
-# Variables for administrative connection to the ADC
+# Variable for administrative connection to the ADC
 #####
-
-variable adc-base {
-}
+variable adc-base {}
 
 #####
-# Variables for license file upload
+# Variable for license file upload
 #####
-
-variable adc-license {
-}
+variable adc-license {}

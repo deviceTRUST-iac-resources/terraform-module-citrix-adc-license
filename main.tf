@@ -1,29 +1,15 @@
 #####
 # Add License
 #####
-
 resource "citrixadc_systemfile" "license_upload" {
     filename     = var.adc-license.filename
     filelocation = var.adc-license.filelocation
     filecontent  = var.adc-license.filecontent
 }
 
-output "filename" {
-  value = var.adc-license.filename
-}
-
-output "filelocation" {
-  value = var.adc-license.filelocation
-}
-
-output "filecontent" {
-  value = var.adc-license.filecontent
-}
-
 #####
 # Save Configuration
 #####
-
 resource "citrixadc_nsconfig_save" "license_save" {
     all        = true
     timestamp  = timestamp()
@@ -34,9 +20,8 @@ resource "citrixadc_nsconfig_save" "license_save" {
 }
 
 #####
-# Reboot
+# Reboot for license application
 #####
-
 resource "citrixadc_rebooter" "license_reboot" {
     timestamp            = timestamp()
     warm                 = true
@@ -48,9 +33,8 @@ resource "citrixadc_rebooter" "license_reboot" {
 }
 
 #####
-# Wait till machine is available
+# Wait a few seconds
 #####
-
 resource "time_sleep" "license_wait_a_few_seconds" {
 
   create_duration = "90s"
