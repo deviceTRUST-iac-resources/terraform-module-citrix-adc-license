@@ -1,5 +1,5 @@
 locals {
-  filelocation = var.adc-license.filelocation
+  filelocation = "/nsconfig/license"
 }
 
 #####
